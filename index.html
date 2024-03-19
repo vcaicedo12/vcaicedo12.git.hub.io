@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="/static/css/style.css"> <!-- Enlazar el archivo CSS -->
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="display" disabled>
+        </div>
+        <div class="keys">
+            <button class="operator" value="clear">C</button>
+            <button class="operator" value="+">+</button>
+            <button class="operator" value="-">-</button>
+            <button class="operator" value="*">*</button>
+            <button class="operator" value="/">/</button>
+            <button value="7">7</button>
+            <button value="8">8</button>
+            <button value="9">9</button>
+            <button value="4">4</button>
+            <button value="5">5</button>
+            <button value="6">6</button>
+            <button value="1">1</button>
+            <button value="2">2</button>
+            <button value="3">3</button>
+            <button value="0">0</button>
+            <button value=".">.</button>
+            <button class="operator" id="calculate" value="=">=</button> <!-- Corregir el botón de igual -->
+            <button class="operator" value="%">%</button> <!-- Módulo -->
+            <button class="operator" value="sqrt">√</button> <!-- Raíz cuadrada -->
+            <button class="operator" value="^">^</button> <!-- Potencia -->
+        </div>
+    </div>
+    
+    <script src="/static/js/logica.js"></script> <!-- Enlazar el archivo JavaScript -->
+</body>
+</html>

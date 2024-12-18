@@ -1,40 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="style.css"> <!-- Enlazar el archivo CSS -->
+    <title>FreshCan Fruits - Taste the Freshness</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <div class="display">
-            <input type="text" id="display" disabled>
+    <header>
+        <div class="container">
+            <h1 data-translate="title">FreshCan Fruits</h1>
+            <p data-translate="subtitle">Experience the taste of freshly picked fruits, anytime, anywhere.</p>
+            <a href="#benefits" class="cta-button" data-translate="learnMore">Learn More</a>
+            <button id="languageToggle" class="language-toggle">ES</button>
         </div>
-        <div class="keys">
-            <button class="operator" value="clear">C</button>
-            <button class="operator" value="+">+</button>
-            <button class="operator" value="-">-</button>
-            <button class="operator" value="*">*</button>
-            <button class="operator" value="/">/</button>
-            <button value="7">7</button>
-            <button value="8">8</button>
-            <button value="9">9</button>
-            <button value="4">4</button>
-            <button value="5">5</button>
-            <button value="6">6</button>
-            <button value="1">1</button>
-            <button value="2">2</button>
-            <button value="3">3</button>
-            <button value="0">0</button>
-            <button value=".">.</button>
-            <button class="operator" id="calculate" value="=">=</button> <!-- Corregir el botón de igual -->
-            <button class="operator" value="%">%</button> <!-- Módulo -->
-            <button class="operator" value="sqrt">√</button> <!-- Raíz cuadrada -->
-            <button class="operator" value="^">^</button> <!-- Potencia -->
+    </header>
+
+    <section class="images">
+        <div class="container">
+            <div class="fruit-item">
+                <img src="/fruta_1.jpg" alt="Canned Peaches">
+                <h3 data-translate="peaches">Canned Peaches</h3>
+                <p class="price">$3.50</p>
+                <p class="ingredients" data-translate="peachesIngredients">Ingredients: Piñas,Uvas,Manzana,Durazno,Cereza y jarabe</p>
+            </div>
+            <div class="fruit-item">
+                <img src="/fruta_2.jpg" alt="Canned Pineapples">
+                <h3 data-translate="pineapples">Canned Pineapples</h3>
+                <p class="price">$3.50</p>
+                <p class="ingredients" data-translate="pineapplesIngredients">Ingredients: Pineapples, water, sugar</p>
+            </div>
+            <div class="fruit-item">
+                <img src="/fruta_3.jpg" alt="Canned Mixed Fruits">
+                <h3 data-translate="mixedFruits">Canned Mixed Fruits</h3>
+                <p class="price">$3.50</p>
+                <p class="ingredients" data-translate="mixedFruitsIngredients">Ingredients: Assorted fruits, water, sugar</p>
+            </div>
+            <div class="fruit-item">
+                <img src="/fruta_4.jpg" alt="Canned Berries">
+                <h3 data-translate="berries">Canned Berries</h3>
+                <p class="price">$3.00</p>
+                <p class="ingredients" data-translate="berriesIngredients">Ingredients: Mixed berries, water, sugar</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 data-translate="whyChoose">Why Choose FreshCan Fruits?</h2>
+            <ul>
+                <li>
+                    <h3 data-translate="taste">Unmatched Taste</h3>
+                    <p data-translate="tasteDescription">Our fruits are picked at peak ripeness and canned within hours to lock in flavor.</p>
+                </li>
+                <li>
+                    <h3 data-translate="freshness">Year-Round Freshness</h3>
+                    <p data-translate="freshnessDescription">Enjoy your favorite fruits any time of the year, regardless of the season.</p>
+                </li>
+                <li>
+                    <h3 data-translate="quality">Premium Quality</h3>
+                    <p data-translate="qualityDescription">We use only the finest fruits and maintain strict quality control standards.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
     
-    <script src="logica.js"></script> <!-- Enlazar el archivo JavaScript -->
+
+    <footer>
+        <div class="container">
+            <h1 data-translate="title_contac">Contact Us</h1>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/19oKtvsNbS/?mibextid=wwXIfr" class="social-button" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@frutas.almibar?is_from_webapp=1&sender_device=pc" class="social-button" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-2"><path d="M8 18V2"/><path d="M12 22V6"/><path d="M16 18V2"/><path d="M20 22V6"/><path d="M4 22V6"/></svg>
+                </a>
+                <a href="https://www.instagram.com/friut.008?utm_source=qr&igsh=MWV6d28yOTNkNnlwZg==" class="social-button" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="log.js"></script>
 </body>
 </html>

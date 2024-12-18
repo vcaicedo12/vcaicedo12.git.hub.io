@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333333;
-    background-color: #FFE5B4;
+    background-color: #F0F8FF; /* Light sky blue background */
 }
 
 .container {
@@ -18,58 +18,63 @@ body {
 }
 
 header {
-    background-color: #E8F3D6;
+    background-color: #FF6B6B; /* Coral red header */
     padding: 40px 0;
     text-align: center;
+    color: #FFFFFF;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin-bottom: 10px;
-    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #FFD1DC;
-    color: #333333;
+    background-color: #4ECDC4; /* Turquoise button */
+    color: #FFFFFF;
     padding: 12px 24px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
-    background-color: #FFA5B5;
+    background-color: #45B7AA;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 .language-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #FFD1DC;
+    background-color: #FFD93D; /* Yellow toggle button */
     color: #333333;
     border: none;
     padding: 8px 16px;
     font-size: 1em;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .language-toggle:hover {
-    background-color: #FFA5B5;
+    background-color: #FFC300;
+    transform: scale(1.05);
 }
 
 .images {
-    padding: 40px 0;
+    padding: 60px 0;
     background-color: #FFFFFF;
 }
 
@@ -80,53 +85,59 @@ p {
 }
 
 .fruit-item {
-    width: 250px;
+    width: 280px;
     margin: 20px;
     text-align: center;
-    background-color: #E8F3D6;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background-color: #F8E9A1; /* Light yellow fruit item background */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .fruit-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
 .fruit-item img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border: 5px solid #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .fruit-item h3 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-bottom: 10px;
+    color: #FF6B6B; /* Coral red fruit title */
 }
 
 .fruit-item .price {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: bold;
-    color: #4CAF50;
+    color: #4ECDC4; /* Turquoise price */
     margin-bottom: 10px;
 }
 
 .fruit-item .ingredients {
-    font-size: 0.9em;
+    font-size: 1em;
     color: #666;
 }
 
 .benefits {
-    background-color: #FFD1DC;
-    padding: 40px 0;
+    background-color: #6C5CE7; /* Purple benefits section */
+    padding: 60px 0;
     text-align: center;
+    color: #FFFFFF;
 }
 
 .benefits h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 2.2em;
 }
 
 .benefits ul {
@@ -138,47 +149,56 @@ p {
 
 .benefits li {
     flex-basis: 30%;
-    margin: 10px;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 25px;
+    background-color: #A29BFE; /* Light purple benefit item */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.benefits li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 footer {
-    background-color: #E8F3D6;
-    color: #333333;
+    background-color: #FF6B6B; /* Coral red footer */
+    color: #FFFFFF;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .social-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: #FFD1DC;
-    color: #333333;
+    background-color: #FFFFFF;
+    color: #FF6B6B; /* Coral red icon color */
     margin: 0 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .social-button:hover {
-    background-color: #FFA5B5;
+    background-color: #FFD93D; /* Yellow on hover */
+    color: #FFFFFF;
     transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 .social-button svg {
-    width: 45px;
-    height: 45px;
+    width: 24px;
+    height: 24px;
 }
 
 @media (max-width: 768px) {
@@ -198,19 +218,19 @@ footer {
         top: 10px;
         right: 10px;
     }
+
     .social-links {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .social-button {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         margin: 0 5px;
     }
 
     .social-button svg {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
 }
-

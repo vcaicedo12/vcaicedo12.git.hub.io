@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        title: "FreshCan Fruits",
+        title: "Fruit Party",
         subtitle: "Experience the taste of freshly picked fruits, anytime, anywhere.",
         learnMore: "Learn More",
         peaches: "Fruits in Syrup",
@@ -21,7 +21,7 @@ const translations = {
         title_contac: "Contact us through our social networks"
     },
     es: {
-        title: "Frutas en Almíbar",
+        title: "Fiesta de Frutas",
         subtitle: "Experimenta el sabor de frutas recién cosechadas, en cualquier momento y lugar.",
         learnMore: "Más Información",
         peaches: "Frutas en Almíbar",

@@ -1,89 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshCan Fruits - Taste the Freshness</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Carolina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        body { 
+            font-family: 'Playfair Display', serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @keyframes snowfall {
+            0% { transform: translateY(-10vh) translateX(0); opacity: 1; }
+            100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
+        }
+
+        .snow {
+            position: absolute;
+            color: white;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        .hidden-content {
+            display: none;
+            opacity: 0;
+        }
+
+        .show-content {
+            display: block;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ajuste para evitar scroll horizontal accidental */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1 data-translate="title">FreshCan Fruits</h1>
-            <p data-translate="subtitle">Experience the taste of freshly picked fruits, anytime, anywhere.</p>
-            <a href="#benefits" class="cta-button" data-translate="learnMore">Learn More</a>
-            <button id="languageToggle" class="language-toggle">ES</button>
-        </div>
-    </header>
+<body class="bg-slate-950 min-h-screen flex items-center justify-center p-4 relative">
 
-    <section class="images">
-        <div class="container">
-            <div class="fruit-item">
-                <img src="/fruta_1.jpg" alt="Canned Peaches">
-                <h3 data-translate="peaches">Canned Peaches</h3>
-                <p class="price">$3.50</p>
-                <p class="ingredients" data-translate="peachesIngredients">Ingredients: Piñas,Uvas,Manzana,Durazno,Cereza y jarabe</p>
-            </div>
-            <div class="fruit-item">
-                <img src="/fruta_2.jpg" alt="Canned Pineapples">
-                <h3 data-translate="pineapples">Canned Pineapples</h3>
-                <p class="price">$3.50</p>
-                <p class="ingredients" data-translate="pineapplesIngredients">Ingredients: Pineapples, water, sugar</p>
-            </div>
-            <div class="fruit-item">
-                <img src="/fruta_3.jpg" alt="Canned Mixed Fruits">
-                <h3 data-translate="mixedFruits">Canned Mixed Fruits</h3>
-                <p class="price">$3.50</p>
-                <p class="ingredients" data-translate="mixedFruitsIngredients">Ingredients: Assorted fruits, water, sugar</p>
-            </div>
-            <div class="fruit-item">
-                <img src="/fruta_4.jpg" alt="Canned Berries">
-                <h3 data-translate="berries">Canned Berries</h3>
-                <p class="price">$3.00</p>
-                <p class="ingredients" data-translate="berriesIngredients">Ingredients: Mixed berries, water, sugar</p>
-            </div>
-        </div>
-    </section>
+    <!-- Nieve de fondo -->
+    <div id="snow-container" class="fixed inset-0 pointer-events-none"></div>
 
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <h2 data-translate="whyChoose">Why Choose FreshCan Fruits?</h2>
-            <ul>
-                <li>
-                    <h3 data-translate="taste">Unmatched Taste</h3>
-                    <p data-translate="tasteDescription">Our fruits are picked at peak ripeness and canned within hours to lock in flavor.</p>
-                </li>
-                <li>
-                    <h3 data-translate="freshness">Year-Round Freshness</h3>
-                    <p data-translate="freshnessDescription">Enjoy your favorite fruits any time of the year, regardless of the season.</p>
-                </li>
-                <li>
-                    <h3 data-translate="quality">Premium Quality</h3>
-                    <p data-translate="qualityDescription">We use only the finest fruits and maintain strict quality control standards.</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+    <!-- Contenedor Principal -->
+    <div id="main-container" class="relative z-10 w-full max-w-lg mx-auto flex justify-center">
+        
+        <!-- Sobre Cerrado -->
+        <button id="btn-open" class="w-full group relative bg-gradient-to-br from-red-900 to-red-950 p-1 rounded-xl shadow-2xl transition-transform hover:scale-[1.02] active:scale-95">
+            <div class="relative border-2 border-amber-200/20 p-8 sm:p-16 md:p-20 rounded-lg flex flex-col items-center gap-6">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100/10 rounded-full flex items-center justify-center mb-2">
+                    <i data-lucide="heart" class="text-amber-200 fill-amber-200/20 w-8 h-8 sm:w-10 sm:h-10"></i>
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-widest text-amber-100 text-center">Para Carolina</h1>
+                <p class="text-amber-200/60 italic text-sm sm:text-base">Toca para abrir...</p>
+                <i data-lucide="chevron-down" class="mt-2 animate-bounce text-amber-200/40 w-6 h-6 sm:w-8 sm:h-8"></i>
+            </div>
+        </button>
 
-    
+        <!-- Tarjeta Abierta -->
+        <div id="card-content" class="hidden-content w-full bg-stone-50 text-slate-900 rounded-xl shadow-2xl p-6 sm:p-12 md:p-16 relative overflow-hidden">
+            <!-- Decoración sutil -->
+            <div class="absolute top-0 right-0 p-4 text-red-800/5">
+                <i data-lucide="sparkles" class="w-20 h-20 sm:w-32 sm:h-32"></i>
+            </div>
 
-    <footer>
-        <div class="container">
-            <h1 data-translate="title_contac">Contact Us</h1>
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/19oKtvsNbS/?mibextid=wwXIfr" class="social-button" aria-label="Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </a>
-                <a href="https://www.tiktok.com/@frutas.almibar?is_from_webapp=1&sender_device=pc" class="social-button" aria-label="TikTok">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-2"><path d="M8 18V2"/><path d="M12 22V6"/><path d="M16 18V2"/><path d="M20 22V6"/><path d="M4 22V6"/></svg>
-                </a>
-                <a href="https://www.instagram.com/friut.008?utm_source=qr&igsh=MWV6d28yOTNkNnlwZg==" class="social-button" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
+            <div class="flex justify-between items-start mb-8 relative z-10">
+                <div class="space-y-1">
+                    <h2 class="text-2xl sm:text-4xl font-light text-red-900 leading-tight">Querida Carolina,</h2>
+                    <div class="h-0.5 w-12 bg-red-900/20"></div>
+                </div>
+                <i data-lucide="snowflake" class="text-blue-200 w-6 h-6 sm:w-8 sm:h-8"></i>
+            </div>
+
+            <div class="space-y-4 sm:space-y-6 text-base sm:text-lg md:text-xl leading-relaxed font-light text-slate-700 italic relative z-10">
+                <p>A veces pensamos que la Navidad es un evento externo, una fecha en el calendario o el brillo de las luces en la calle. Pero la verdadera Navidad es un estado del alma.</p>
+                <p>Mi deseo para ti, Carolina, es que en medio de todo el ruido del mundo, logres escuchar tu propio silencio. Que descubras que <strong>tú eres tu propio regalo</strong>.</p>
+                <p>No busques la magia fuera. La magia es tu capacidad de seguir creyendo, de seguir amando y de transformar lo ordinario en algo sagrado con solo tu presencia.</p>
+                <p class="font-normal text-red-950">Que este año tu luz no solo brille, sino que te dé paz.</p>
+            </div>
+
+            <!-- Firma -->
+            <div class="mt-8 text-right relative z-10">
+                <p class="text-slate-500 text-sm sm:text-base font-light italic">Con aprecio,</p>
+                <p class="text-lg sm:text-xl text-red-900 font-medium">Quien te estima, Victor.</p>
+            </div>
+
+            <div class="mt-10 flex flex-col items-center relative z-10">
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mb-6"></div>
+                <p class="text-xl sm:text-2xl font-light tracking-[0.2em] text-red-900 uppercase">Feliz Navidad</p>
+                <p class="text-xs uppercase tracking-widest text-slate-400 mt-1">Diciembre 2025</p>
+                
+                <button id="btn-close" class="mt-8 text-[10px] text-slate-400 hover:text-red-900 transition-colors uppercase tracking-widest flex items-center gap-2 py-2 px-4">
+                    <i data-lucide="chevron-left" class="w-3 h-3"></i> Volver
+                </button>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="logica.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Nieve optimizada para móviles (menos elementos en pantallas pequeñas)
+        const isMobile = window.innerWidth < 768;
+        const snowCount = isMobile ? 25 : 50;
+        const snowContainer = document.getElementById('snow-container');
+        
+        for (let i = 0; i < snowCount; i++) {
+            const snow = document.createElement('div');
+            snow.className = 'snow';
+            snow.innerHTML = '❄';
+            snow.style.left = Math.random() * 100 + 'vw';
+            snow.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            snow.style.fontSize = (Math.random() * 8 + 8) + 'px';
+            snow.style.animationDelay = Math.random() * 5 + 's';
+            snowContainer.appendChild(snow);
+        }
+
+        const btnOpen = document.getElementById('btn-open');
+        const btnClose = document.getElementById('btn-close');
+        const cardContent = document.getElementById('card-content');
+
+        btnOpen.addEventListener('click', () => {
+            btnOpen.classList.add('hidden');
+            cardContent.classList.remove('hidden-content');
+            cardContent.classList.add('show-content');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        btnClose.addEventListener('click', () => {
+            cardContent.classList.add('hidden-content');
+            cardContent.classList.remove('show-content');
+            setTimeout(() => {
+                btnOpen.classList.remove('hidden');
+            }, 100);
+        });
+    </script>
 </body>
 </html>
